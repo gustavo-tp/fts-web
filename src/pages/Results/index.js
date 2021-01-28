@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import api from '../../config/api';
 
 import SearchInput from '../../components/SearchInput';
@@ -14,24 +14,24 @@ const Results = ({ location }) => {
   const [totalRecords, setTotalRecords] = useState(0);
   const [queryExecutionTime, setQueryExecutionTime] = useState(0);
 
-  async function fetchSearchResults() {
+  const fetchSearchResults = useCallback(() => {
     const searchMethod = isFts ? 'fts' : 'nofts';
 
-    const searchResults = await api.get(
+    api.get(
       `exemplaries/${searchMethod}?seachTerms=${searchTerms.trim()}&page=${currentPage}`
-    );
+    ).then(searchResults => {
+      const { totalPages, totalRecords, queryExecutionTime, data } = searchResults.data;
 
-    const { totalPages, totalRecords, queryExecutionTime, data } = searchResults.data;
-
-    setSearchResults(data);
-    setTotalPages(totalPages);
-    setTotalRecords(totalRecords);
-    setQueryExecutionTime(queryExecutionTime);
-  }
-
+      setSearchResults(data);
+      setTotalPages(totalPages);
+      setTotalRecords(totalRecords);
+      setQueryExecutionTime(queryExecutionTime);
+    });
+  }, [isFts, searchTerms, currentPage]);
+  
   useEffect(() => {
     fetchSearchResults();
-  }, [isFts, currentPage]);
+  }, [fetchSearchResults]);
 
   const previousPage = () => {
     if (currentPage === 1) return;
