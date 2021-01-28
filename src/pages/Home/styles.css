@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container header {
+  margin-bottom: 46px;
+}
+
+.container header .logo {
+  font-size: 76px;
+}

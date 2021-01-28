@@ -1,0 +1,123 @@
+.results-container {
+  display: block;
+  padding: 24px;
+  height: auto;
+}
+
+.results-container .result-metrics {
+  display: block;
+  max-width: 700px;
+  margin: 16px auto 0;
+  padding: 0 24px;
+  font-size: 14px;
+  color: #808B96;
+}
+
+.results-container .content-card {
+  margin-top: 24px;
+  flex-direction: column;
+  padding: 16px;
+  border: 1px solid #ABB2B9;
+  border-radius: 8px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+}
+
+.results-container .content-card,
+.results-container .content-card .content-detail,
+.results-container .content-card .publisher-details {
+  display: flex;
+}
+
+.results-container .content-card .content-detail {
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.results-container .content-card .content-detail cite {
+  font-size: 14px;
+  color: #D5D8DC;
+  line-height: 24px;
+}
+
+.results-container .content-card .content-detail span {
+  border: 1px solid #ABB2B9;
+  border-radius: 2px;
+  padding: 0 4px;
+  color: #ABB2B9;
+}
+
+.results-container .content-card strong {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.results-container .content-card p {
+  margin-bottom: 8px;
+}
+
+.results-container .content-card .publisher-details cite,
+.results-container .content-card .publisher-details span {
+  font-size: 14px;
+  color: #808B96;
+  line-height: 24px;
+}
+
+.results-container .content-card .publisher-details cite {
+  margin-right: 16px;
+}
+
+.results-container .pagination {
+  max-width: 700px;
+  margin: 24px auto 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.results-container .pagination button {
+  padding: 8px;
+  border: 0;
+  border-radius: 4px;
+  background: #566573;
+  color: #FFF;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.results-container .pagination .page-button {
+  width: 48px;
+}
+
+.results-container .pagination .page-button:not(.selected) {
+  border: 1px solid #566573;
+  background: transparent;
+}
+
+.results-container .pagination button[disabled] {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.results-container .pagination button:hover {
+  opacity: 0.7;
+}
+
+.results-container .pagination button[disabled]:hover {
+  opacity: 0.5;
+}
+
+@media (max-width: 700px) {
+  .results-container .pagination {
+    justify-content: center;
+  }
+  
+  .results-container .pagination button {
+    margin: 8px 4px 0;
+  }
+}

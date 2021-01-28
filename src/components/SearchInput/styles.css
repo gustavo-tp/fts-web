@@ -1,0 +1,35 @@
+.searchContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 480px;
+  height: 46px;
+  background: #FFF;
+  border-radius: 23px;
+  padding: 0 24px;
+  margin: 0 auto;
+}
+
+.results-container .searchContainer {
+  width: auto;
+  max-width: 700px;
+}
+
+.searchContainer input {
+  flex: 1;
+  border: 0;
+}
+
+.searchContainer .fts-input {
+  display: flex;
+  align-items: center;
+}
+
+.searchContainer .fts-input label {
+  color: #808B96;
+  margin: 0 8px;
+}
+
+/*.searchContainer input:focus {
+  border: 1px solid blue;
+}*/
