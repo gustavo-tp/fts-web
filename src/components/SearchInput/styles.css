@@ -27,6 +27,6 @@
 
 @media (max-width: 700px) {
   .searchContainer {
-    margin: auto;
+    width: auto;
   }
 }
